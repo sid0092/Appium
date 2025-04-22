@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.1 on darwin)" generated="2025-04-22T14:45:33.301860" rpa="false" schemaversion="5">
+<suite id="s1" name="TestCases" source="/Users/apple/PycharmProjects/PythonTestProject/TestCases.robot">
+<test id="s1-t1" name="Test Alert And Slider" line="17">
+<kw name="Setup Test Case" owner="setup_keywords">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-04-22T14:45:33.346259" level="INFO">${desired_caps} = {'platformName': 'iOS', 'platformVersion': '18.2', 'deviceName': 'iPhone', 'automationName': 'XCUITest', 'app': '/Users/apple/Library/Developer/Xcode/DerivedData/TestApp-bppcxyoljgorcffcplokvwufholv/B...</msg>
+<var>${desired_caps}</var>
+<arg>__import__('capabilities').get_desired_caps('${PLATFORM}')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-04-22T14:45:33.346161" elapsed="0.000115"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-22T14:45:33.346371" level="INFO">Starting application with capabilities: {'platformName': 'iOS', 'platformVersion': '18.2', 'deviceName': 'iPhone', 'automationName': 'XCUITest', 'app': '/Users/apple/Library/Developer/Xcode/DerivedData/TestApp-bppcxyoljgorcffcplokvwufholv/Build/Products/Debug-iphonesimulator/TestApp.app', 'udid': '73221B2F-1DB3-4985-A09C-BFBEF03DC4CE'}</msg>
+<arg>Starting application with capabilities: ${desired_caps}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-22T14:45:33.346325" elapsed="0.000063"/>
+</kw>
+<kw name="Start Appium Server" owner="setup_keywords">
+<kw name="Start Process" owner="Process">
+<msg time="2025-04-22T14:45:33.346565" level="INFO">Starting process:
+appium</msg>
+<arg>appium</arg>
+<doc>Starts a new process on background.</doc>
+<status status="PASS" start="2025-04-22T14:45:33.346512" elapsed="0.001864"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-22T14:45:43.349907" level="INFO">Slept 10 seconds.</msg>
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-22T14:45:33.348547" elapsed="10.001796"/>
+</kw>
+<status status="PASS" start="2025-04-22T14:45:33.346441" elapsed="10.004295"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-04-22T14:45:43.352294" level="INFO">${desired_caps} = {'platformName': 'iOS', 'platformVersion': '18.2', 'deviceName': 'iPhone', 'automationName': 'XCUITest', 'app': '/Users/apple/Library/Developer/Xcode/DerivedData/TestApp-bppcxyoljgorcffcplokvwufholv/B...</msg>
+<arg>${desired_caps}</arg>
+<arg>${desired_caps}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-04-22T14:45:43.351370" elapsed="0.001049"/>
+</kw>
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${APPIUM_SERVER}</arg>
+<arg>&amp;{desired_caps}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2025-04-22T14:45:43.352760" elapsed="14.999133"/>
+</kw>
+<arg>${PLATFORM}</arg>
+<status status="PASS" start="2025-04-22T14:45:33.345767" elapsed="25.006244"/>
+</kw>
+<kw name="Click Show Alert Button" owner="Keyword">
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2025-04-22T14:45:58.584613" level="INFO">xpath criteria: //XCUIElementTypeStaticText[@name="show alert"]</msg>
+<arg>${SHOW_ALERT_BUTTON}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2025-04-22T14:45:58.352563" elapsed="0.232098"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-04-22T14:45:58.585400" level="INFO">Clicking element '//XCUIElementTypeStaticText[@name="show alert"]'.</msg>
+<msg time="2025-04-22T14:45:59.405876" level="INFO">xpath criteria: //XCUIElementTypeStaticText[@name="show alert"]</msg>
+<arg>${SHOW_ALERT_BUTTON}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-04-22T14:45:58.584742" elapsed="0.821316"/>
+</kw>
+<status status="PASS" start="2025-04-22T14:45:58.352289" elapsed="1.053927"/>
+</kw>
+<kw name="Validate Cool Alert Appears" owner="Keyword">
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2025-04-22T14:45:59.643700" level="INFO">xpath criteria: //XCUIElementTypeAlert[@name="Cool title"]</msg>
+<arg>${COOL_ALERT_TITLE}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2025-04-22T14:45:59.407234" elapsed="0.236520"/>
+</kw>
+<kw name="Element Should Be Visible" owner="AppiumLibrary">
+<msg time="2025-04-22T14:45:59.864275" level="INFO">xpath criteria: //XCUIElementTypeAlert[@name="Cool title"]</msg>
+<arg>${COOL_ALERT_TITLE}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" start="2025-04-22T14:45:59.643844" elapsed="0.220477"/>
+</kw>
+<status status="PASS" start="2025-04-22T14:45:59.406693" elapsed="0.457668"/>
+</kw>
+<kw name="Teardown Test Case" owner="setup_keywords">
+<kw name="Close Application" owner="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" start="2025-04-22T14:45:59.864608" elapsed="1.055011"/>
+</kw>
+<kw name="Stop Appium Server" owner="setup_keywords">
+<kw name="Terminate All Processes" owner="Process">
+<msg time="2025-04-22T14:46:00.921035" level="INFO">Gracefully terminating process.</msg>
+<msg time="2025-04-22T14:46:01.027029" level="INFO">Process completed.</msg>
+<doc>Terminates all still running processes started by this library.</doc>
+<status status="PASS" start="2025-04-22T14:46:00.920751" elapsed="0.106773"/>
+</kw>
+<status status="PASS" start="2025-04-22T14:46:00.920111" elapsed="0.107669"/>
+</kw>
+<status status="PASS" start="2025-04-22T14:45:59.864472" elapsed="1.163443"/>
+</kw>
+<status status="PASS" start="2025-04-22T14:45:33.345501" elapsed="27.682987"/>
+</test>
+<status status="PASS" start="2025-04-22T14:45:33.302330" elapsed="27.727420"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TestCases" id="s1" pass="1" fail="0" skip="0">TestCases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
